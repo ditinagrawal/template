@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 
 import { ViewTransitions } from "next-view-transitions"
 
+import { TanstackProvider } from "@/components/providers/tanstack-provider"
 import "./globals.css"
 
 const inter = Inter({
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en">
-        <body className={`${inter.className} antialiased`}>{children}</body>
+        <body className={`${inter.className} antialiased`}>
+          <TanstackProvider>{children}</TanstackProvider>
+        </body>
       </html>
     </ViewTransitions>
   )
