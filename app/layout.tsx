@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 
 import { ViewTransitions } from "next-view-transitions"
+import { Toaster } from "react-hot-toast"
 
 import { TanstackProvider } from "@/components/providers/tanstack-provider"
 import "./globals.css"
@@ -25,7 +26,10 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en">
         <body className={`${inter.className} antialiased`}>
-          <TanstackProvider>{children}</TanstackProvider>
+          <TanstackProvider>
+            {children}
+            <Toaster />
+          </TanstackProvider>
         </body>
       </html>
     </ViewTransitions>
