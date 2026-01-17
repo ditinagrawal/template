@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query"
 export default function HomePage() {
   const { data, isLoading } = useQuery({
     queryKey: ["hello"],
-    queryFn: async () => await Eden.get(),
+    queryFn: async () => await Eden.message.get(),
   })
   if (isLoading)
     return (
